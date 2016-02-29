@@ -17,6 +17,8 @@
 		CB05C8D01C776E1D00B856CE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8CF1C776E1D00B856CE /* FBSDKCoreKit.framework */; };
 		CB05C8D21C776E2800B856CE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8D11C776E2800B856CE /* FBSDKLoginKit.framework */; };
 		CB05C8D41C776E3500B856CE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8D31C776E3500B856CE /* FBSDKShareKit.framework */; };
+		CB05C8D61C778AA700B856CE /* BentonSans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB05C8D51C778AA700B856CE /* BentonSans Light.otf */; };
+		CB05C8D81C7A38B200B856CE /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CB05C8CF1C776E1D00B856CE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		CB05C8D11C776E2800B856CE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		CB05C8D31C776E3500B856CE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		CB05C8D51C778AA700B856CE /* BentonSans Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BentonSans Light.otf"; path = "../../../Downloads/BentonSans Light.otf"; sourceTree = "<group>"; };
+		CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeViewController.swift; sourceTree = "<group>"; };
 		CE46C867CB9346A986A84D39 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,11 +91,13 @@
 				CB05C70C1C75409A00B856CE /* AppDelegate.swift */,
 				CB05C70E1C75409A00B856CE /* ViewController.swift */,
 				CB05C7101C75409A00B856CE /* Main.storyboard */,
+				CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */,
 				CB05C7161C75409A00B856CE /* Assets.xcassets */,
 				CB05C7181C75409A00B856CE /* LaunchScreen.storyboard */,
 				CB05C71B1C75409A00B856CE /* Info.plist */,
 				CB05C7131C75409A00B856CE /* Bridge.xcdatamodeld */,
 				CB05C7251C767D7600B856CE /* Bridge-Bridging-Header.h */,
+				CB05C8D51C778AA700B856CE /* BentonSans Light.otf */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 			files = (
 				CB05C71A1C75409A00B856CE /* LaunchScreen.storyboard in Resources */,
 				CB05C7171C75409A00B856CE /* Assets.xcassets in Resources */,
+				CB05C8D61C778AA700B856CE /* BentonSans Light.otf in Resources */,
 				CB05C7121C75409A00B856CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB05C70F1C75409A00B856CE /* ViewController.swift in Sources */,
+				CB05C8D81C7A38B200B856CE /* BridgeViewController.swift in Sources */,
 				CB05C70D1C75409A00B856CE /* AppDelegate.swift in Sources */,
 				CB05C7151C75409A00B856CE /* Bridge.xcdatamodeld in Sources */,
 			);

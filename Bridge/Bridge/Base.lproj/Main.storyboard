@@ -5,6 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="BentonSans Light.otf">
+            <string>BentonSans-Light</string>
+            <string>BentonSans-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,47 +24,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxz-uf-Cqq">
-                                <rect key="frame" x="210" y="423" width="43" height="30"/>
-                                <state key="normal" title="Foggy"/>
-                                <connections>
-                                    <action selector="updateWheather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BAu-6x-ZTi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJB-TY-XTx">
-                                <rect key="frame" x="133" y="442" width="43" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGa-Qx-nCa">
+                                <rect key="frame" x="166" y="569" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJB-TY-XTx">
+                                <rect key="frame" x="137" y="617" width="43" height="30"/>
                                 <state key="normal" title="Sunny"/>
                                 <connections>
                                     <action selector="updateWheather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jMs-m7-I1U"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGa-Qx-nCa">
-                                <rect key="frame" x="166" y="347" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BRIDGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04T-uJ-VJc">
+                                <rect key="frame" x="69" y="70" width="236" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="6oA-tS-sOH"/>
+                                    <constraint firstAttribute="height" constant="75" id="GKe-b1-Fw2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="64"/>
+                                <color key="textColor" red="0.7159276832" green="0.022045922289999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;All of life is rooted in relationships&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzX-ge-Rji">
+                                <rect key="frame" x="39" y="180" width="296" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="GpM-Ae-Bco"/>
+                                    <constraint firstAttribute="height" constant="21" id="QA4-5U-is5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BentonSans-Light" family="BentonSans Light" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Lee A. Harris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbY-EH-AUa">
+                                <rect key="frame" x="118" y="209" width="138" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="7gT-Rn-6aH"/>
+                                    <constraint firstAttribute="width" constant="138" id="w9P-uC-vBe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BentonSans-Light" family="BentonSans Light" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxz-uf-Cqq">
+                                <rect key="frame" x="206" y="617" width="43" height="30"/>
+                                <state key="normal" title="Foggy"/>
+                                <connections>
+                                    <action selector="updateWheather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BAu-6x-ZTi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mJB-TY-XTx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="117" id="KaP-ss-EDo"/>
-                            <constraint firstItem="ZGa-Qx-nCa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c02-2D-RKA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zxz-uf-Cqq" secondAttribute="trailing" constant="106" id="thE-5A-bph"/>
+                            <constraint firstItem="LbY-EH-AUa" firstAttribute="top" secondItem="gzX-ge-Rji" secondAttribute="bottom" constant="8" id="7Z3-Kb-RN7"/>
+                            <constraint firstItem="gzX-ge-Rji" firstAttribute="top" secondItem="04T-uJ-VJc" secondAttribute="bottom" constant="35" id="N1O-oh-89r"/>
+                            <constraint firstItem="gzX-ge-Rji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nex-lT-kuo"/>
+                            <constraint firstItem="04T-uJ-VJc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="fok-jH-9yn"/>
+                            <constraint firstItem="04T-uJ-VJc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rpC-Aa-thB"/>
+                            <constraint firstItem="LbY-EH-AUa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vPY-sS-Edl"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="testLabel" destination="ZGa-Qx-nCa" id="tWJ-U9-Ebz"/>
-                        <segue destination="LGU-u5-vUj" kind="presentation" identifier="showNew" id="tUs-yF-roo"/>
+                        <segue destination="LGU-u5-vUj" kind="presentation" identifier="showApp" id="tUs-yF-roo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="276.5" y="289.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Bridge View Controller-->
         <scene sceneID="9nr-B6-w55">
             <objects>
-                <viewController id="LGU-u5-vUj" sceneMemberID="viewController">
+                <viewController id="LGU-u5-vUj" customClass="BridgeViewController" customModule="Bridge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ig5-uT-3BJ"/>
                         <viewControllerLayoutGuide type="bottom" id="nZx-1y-gqG"/>
@@ -67,25 +107,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bridge Practice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nke-cr-MI3">
-                                <rect key="frame" x="16" y="140" width="323" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dr9-d5-CVi">
+                                <rect key="frame" x="67" y="367" width="240" height="175"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8p-0J-L1a">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rhL-7m-6Sc"/>
+                                </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="26"/>
+                                    <color key="textColor" red="0.7159276832" green="0.022045922289999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="BRIDGE" id="NOF-YD-RSA">
+                                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="OMq-12-dgu">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Messages" id="dEf-gi-fEV">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zK-mL-d4d">
+                                <rect key="frame" x="67" y="99" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhE-E1-epd">
+                                <rect key="frame" x="67" y="128" width="240" height="175"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nke-cr-MI3" firstAttribute="top" secondItem="Ig5-uT-3BJ" secondAttribute="bottom" constant="120" id="UH4-p6-C4g"/>
-                            <constraint firstItem="Nke-cr-MI3" firstAttribute="leading" secondItem="qR4-eH-GMt" secondAttribute="leadingMargin" id="dOD-aR-nAp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nke-cr-MI3" secondAttribute="trailing" constant="20" id="klR-5N-PFO"/>
+                            <constraint firstItem="L8p-0J-L1a" firstAttribute="top" secondItem="Ig5-uT-3BJ" secondAttribute="bottom" constant="8" id="Zna-AY-8RP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="L8p-0J-L1a" secondAttribute="trailing" constant="-20" id="cZe-fl-9E6"/>
+                            <constraint firstItem="L8p-0J-L1a" firstAttribute="leading" secondItem="qR4-eH-GMt" secondAttribute="leadingMargin" constant="-20" id="luG-dU-ydJ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="user1DisplayName" destination="9zK-mL-d4d" id="ckx-f9-vdm"/>
+                        <outlet property="user1Image" destination="nhE-E1-epd" id="jbc-ww-lmF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7V-vA-6gZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="361"/>
+            <point key="canvasLocation" x="831.5" y="289.5"/>
         </scene>
     </scenes>
 </document>
