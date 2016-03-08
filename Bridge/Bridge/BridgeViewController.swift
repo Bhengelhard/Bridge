@@ -9,10 +9,17 @@
 import UIKit
 import FBSDKCoreKit
 
+
+
 class BridgeViewController: UIViewController {
 
     @IBOutlet weak var user1DisplayName: UILabel!
     @IBOutlet weak var user1Image: UIImageView!
+    let usersRef = ref.childByAppendingPath("users")
+    var usersBridged = [String]()
+    var usersRejected = [String]()
+    var usersFriends = [String]()
+    var userOptions = [String]()
     
     var userName1 = ""
     
@@ -32,29 +39,27 @@ class BridgeViewController: UIViewController {
         
         label.transform = stretch
         
-        let usersRef = ref.childByAppendingPath("users")
         
         var usersBridgedOrRejected = ""
         
         if gesture.state == UIGestureRecognizerState.Ended {
             if label.center.x < 100 {
                 print ("Not chosen")
-                usersBridgedOrRejected = "rejected"
+                usersBridgedOrRejected = "usersRejected"
             } else if label.center.x > self.view.bounds.width - 100 {
                 print("chosen")
-                usersBridgedOrRejected = "bridged"
+                usersBridgedOrRejected = "usersBridged"
             }
             
-            /*let postRef = ref.childByAppendingPath("posts")
-            let post1 = ["author": "gracehop", "title": "Announcing COBOL, a New Programming Language"]
-            let post1Ref = postRef.childByAutoId()
-            post1Ref.setValue(post1)*/
-            
-            let user1Ref = usersRef.childByAppendingPath("user8").childByAppendingPath("usersBridged")
+            if usersBridgedOrRejected != "" {
                 
-            let user1usersBridged = user1Ref.childByAutoId()
-            
-            user1usersBridged.setValue(userName1)
+                let user1Ref = usersRef.childByAppendingPath(ref.authData.uid).childByAppendingPath(usersBridgedOrRejected)
+                
+                let user1usersBridged = user1Ref.childByAutoId()
+                
+                user1usersBridged.setValue(userName1)
+                
+            }
             
             
             rotation = CGAffineTransformMakeRotation(0)
@@ -72,7 +77,8 @@ class BridgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("got to the view Did Load")
-        //print(ref.authData.uid)
+        
+        
         let gesture = UIPanGestureRecognizer(target: self, action: Selector("wasDragged:"))
         user1Image.addGestureRecognizer(gesture)
         user1Image.userInteractionEnabled = true
@@ -86,33 +92,32 @@ class BridgeViewController: UIViewController {
         
     }
     
+    
+    //update Image with picture of user not listed in usersBridged or usersRejected
     func updateImage() {
         
-        let usersRef = ref.childByAppendingPath("users")
-        usersRef.queryLimitedToLast(1)
-            .observeEventType(.ChildAdded, withBlock: { snapshot in
-                if let profilePictureURL = snapshot.value.objectForKey("ProfilePictureURL") as? String {
-                    //show picture
-                    if let fbpicURL = NSURL(string: profilePictureURL) {
-                        if let data = NSData(contentsOfURL: fbpicURL) {
-                            self.user1Image.image = UIImage(data: data)
-                        }
-                    }
+        //var ignoredUsers = [""]
+        
+        usersRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            if let user = snapshot.key as? String {
+                self.usersFriends.append(snapshot.key as! String)
+            }
+        })
+        
+        //get usersBridged from database
+        usersRef.childByAppendingPath(ref.authData.uid + "/usersBridged").observeEventType(.ChildAdded, withBlock:
+            { (usersBridgedSnapshot) in
+                if let user = usersBridgedSnapshot.value as? String {
+                    self.usersBridged.append(usersBridgedSnapshot.value as! String)
                 }
-                if let displayName = snapshot.value.objectForKey("displayName") as? String {
-                    self.user1DisplayName.text = snapshot.value.objectForKey("displayName")! as! String
-                }
-                if let userName = snapshot.key as? String {
-                    self.userName1 = snapshot.key! as! String
-                }
-                
-            })
-
+        })
+        
+        print("users bridged \(usersBridged)")
+        print("users friends \(usersFriends)")
+        
+        //how to get the two above variables to print with the information retrieved in the Observe Events above them so that I can use logic to find the wanted user
+       
     }
-        
-        
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -140,35 +145,77 @@ class BridgeViewController: UIViewController {
 
 
 
+/*func updateImage() {
+ 
+ 
+ //Create firebase version ofquery.whereKey["objectId", notContainedIN: PFUser.currentUser()!["accepted"] and ...["rejected"]
+ //Users that are friends with the current user (for now just everyone)
+ //usersBridged
+ //usersRejected
+ 
+ //create variable
+ //run logic
+ //find user
+ //put in pic and etc.
+ 
+ var usersBridged = [String]()
+ var usersRejected = [String]()
+ //for now this is just everyone in the queue, but in the future it will need to be just friends of the authUser and should check that these are people who are not friends with two users being picture
+ var usersFriends = [String]()
+ 
+ 
+ //get users
+ usersRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+ if let user = snapshot.value as? String {
+ usersFriends.append(snapshot.value as! String)
+ }
+ print(usersFriends)
+ })
+ 
+ //get usersBridged from database
+ usersRef.childByAppendingPath(ref.authData.uid + "/usersBridged").observeEventType(.ChildAdded, withBlock:
+ { (usersBridgedSnapshot) in
+ if let user = usersBridgedSnapshot.value as? String {
+ usersBridged.append(usersBridgedSnapshot.value as! String)
+ }
+ })
+ 
+ //get usersRejected from database
+ usersRef.childByAppendingPath(ref.authData.uid + "/usersRejected").observeEventType(.ChildAdded, withBlock:
+ { (usersRejectedSnapshot) in
+ if let user = usersRejectedSnapshot.value as? String {
+ usersRejected.append(usersRejectedSnapshot.value as! String)
+ }
+ })
+ }
 
 
-
-/*usersRef.queryLimitedToLast(1)
+usersRef.queryLimitedToLast(1)
  .observeEventType(.ChildAdded, withBlock: { snapshot in
  //returns the potential user -> need to make it random or later based on a location and Bridge Status algorithm
  print(snapshot.value.objectForKey("ProfilePictureURL"))
  //print("this is the key")
- /*if let fbpicURL = NSURL(string: facebookProfPicURL) {
+ if let fbpicURL = NSURL(string: facebookProfPicURL) {
  if let data = NSData(contentsOfURL: fbpicURL) {
  self.user1Image.image = UIImage(data: data)
  }
- }*/
+ }
  
- })*/
+ })
 // Get a reference to our posts
-/*var ref2 = Firebase(url:"https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts")
+var ref2 = Firebase(url:"https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts")
  // Retrieve new posts as they are added to your database
  ref2.observeEventType(.ChildAdded, withBlock: { snapshot in
  print(snapshot.value.objectForKey("author"))
  print(snapshot.value.objectForKey("title"))
- })*/
+ })
 
-/*usersRef.observeEventType(.Value) { (snapshot) in
+usersRef.observeEventType(.Value) { (snapshot) in
  usersRef.queryLimitedToLast(1).observeSingleEventOfType(.Value, withBlock: { (querySnapshot) in
  print(snapshot.value)
  })
- }*/
-/*ref.childByAppendingPath("stegosaurus").childByAppendingPath("height")
+ }
+ ref.childByAppendingPath("stegosaurus").childByAppendingPath("height")
  .observeEventType(.Value, withBlock: { stegosaurusHeightSnapshot in
  if let favoriteDinoHeight = stegosaurusHeightSnapshot.value as? Double {
  let queryRef = ref.queryOrderedByChild("height").queryEndingAtValue(favoriteDinoHeight).queryLimitedToLast(2)
@@ -181,10 +228,10 @@ class BridgeViewController: UIViewController {
  }
  })
  }
- })*/
+ })
 
 //print(ref.childByAppendingPath("users").valueForKey("user1") as! String)
-/*ref.observeEventType(.Value, withBlock:  {
+ ref.observeEventType(.Value, withBlock:  {
  snapshot in
  print(snapshot.value)
  })
@@ -258,10 +305,37 @@ class BridgeViewController: UIViewController {
 //        })
 
 //how to add fields and the corresponding info
-var alanisawesome = ["full_name": "Alan Turing", "date_of_birth": "June 23, 1912"]
+ var alanisawesome = ["full_name": "Alan Turing", "date_of_birth": "June 23, 1912"]
  var gracehop = ["full_name": "Grace Hopper", "date_of_birth": "December 9, 1906"]
  
  var usersRef = ref.childByAppendingPath("users")
  
  var users = ["alanisawesome": alanisawesome, "gracehop": gracehop]
- usersRef.setValue(users)*/
+ usersRef.setValue(users)
+
+usersRef.childByAppendingPath(ref.authData.uid).observeEventType(.ChildAdded, withBlock: { (bridgedSnapshot) in
+ 
+ print(bridgedSnapshot.value.objectForKey("usersBridged"))
+ 
+ if let user = bridgedSnapshot.value as? String {
+ self.usersBridged.append(bridgedSnapshot.value as! String)
+ }
+ })
+ 
+ var addUser = true
+ for user in usersFriends {
+ for bridgedUser in usersBridged {
+ if user == bridgedUser {
+ addUser = false
+ }
+ }
+ if addUser {
+ userOptions.append(user)
+ }
+ }
+ 
+ print(userOptions)
+ 
+ 
+ 
+ */

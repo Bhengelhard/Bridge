@@ -15,7 +15,7 @@ var ref = Firebase(url: "https://sweltering-fire-7889.firebaseio.com/")
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-        var FBLoginButton = FBSDKLoginButton()
+    var FBLoginButton = FBSDKLoginButton()
     
     @IBOutlet weak var testLabel: UILabel!
     
@@ -48,12 +48,37 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
+            ref.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
+                if error != nil {
+                    print("Login failed. \(error)")
+                    //an error occure while attempting login
+                    if let errorCode = FAuthenticationError(rawValue: error.code) {
+                        switch(errorCode) {
+                        case .UserDoesNotExist:
+                            print("Handle Invalid User")
+                        case .InvalidEmail:
+                            print("Handle invalid email")
+                        case .InvalidPassword:
+                            print("Handle invalid passowrd")
+                        default:
+                            print("Handle default situation")
+                        }
+                    }
+                } else {
+                    print("Logged in! \(authData.uid)")
+                    self.performSegueWithIdentifier("showApp", sender: self)
+                }
+            })
+        }
+        /*
         if (FBSDKAccessToken.currentAccessToken() == nil) {
             print("Not logged in")
         } else {
             print("logged in")
-            performSegueWithIdentifier("showApp", sender: self)
-        }
+            //performSegueWithIdentifier("showApp", sender: self)
+        }*/
         
     }
     
