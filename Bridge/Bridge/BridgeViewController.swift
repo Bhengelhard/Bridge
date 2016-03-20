@@ -79,11 +79,6 @@ class BridgeViewController: UIViewController {
         
         updateImage()
         
-        
-        
-        //var ref2 = Firebase(url:"https://docs-examples.firebaseio.com/web/saving-data/fireblog/posts")
-        // Retrieve two users profile pictures and names as they are added to your database
-        
     }
     
     
