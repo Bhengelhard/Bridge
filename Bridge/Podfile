@@ -1,2 +1,4 @@
 use_frameworks!
-pod 'Firebase', '>= 2.5.0'
+pod 'FBSDKShareKit', '~> 4.10'
+pod 'FBSDKLoginKit', '~> 4.10'
+pod 'FBSDKCoreKit', '~> 4.10'

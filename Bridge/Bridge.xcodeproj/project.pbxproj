@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69ED53EFCCC81289252FCE9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E90D2B94C97C57145FDD55B /* libPods.a */; };
+		C0531F301C9F50FF00513257 /* BentonSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0531F2F1C9F50FF00513257 /* BentonSans-Light.otf */; };
+		C0531F321C9F51FC00513257 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0531F311C9F51FC00513257 /* Main.storyboard */; };
 		CB05C70D1C75409A00B856CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05C70C1C75409A00B856CE /* AppDelegate.swift */; };
 		CB05C70F1C75409A00B856CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05C70E1C75409A00B856CE /* ViewController.swift */; };
 		CB05C7151C75409A00B856CE /* Bridge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB05C7131C75409A00B856CE /* Bridge.xcdatamodeld */; };
@@ -16,14 +17,14 @@
 		CB05C8D01C776E1D00B856CE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8CF1C776E1D00B856CE /* FBSDKCoreKit.framework */; };
 		CB05C8D21C776E2800B856CE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8D11C776E2800B856CE /* FBSDKLoginKit.framework */; };
 		CB05C8D41C776E3500B856CE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB05C8D31C776E3500B856CE /* FBSDKShareKit.framework */; };
-		CB05C8D61C778AA700B856CE /* BentonSans Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB05C8D51C778AA700B856CE /* BentonSans Light.otf */; };
 		CB05C8D81C7A38B200B856CE /* BridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */; };
-		CB05C8DE1C83EDB800B856CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB05C8DC1C83EDB800B856CE /* Main.storyboard */; };
+		DEFB2354BD70D1DB9EE34944 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE200CD5BB38C9B511D8C59D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D14F55196A8E05D62D78B9A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		7E90D2B94C97C57145FDD55B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0531F2F1C9F50FF00513257 /* BentonSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BentonSans-Light.otf"; sourceTree = "<group>"; };
+		C0531F311C9F51FC00513257 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CB05C7091C75409A00B856CE /* Bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB05C70C1C75409A00B856CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB05C70E1C75409A00B856CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,10 +36,9 @@
 		CB05C8CF1C776E1D00B856CE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		CB05C8D11C776E2800B856CE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		CB05C8D31C776E3500B856CE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../Downloads/FacebookSDKs-iOS-20160210/FBSDKShareKit.framework"; sourceTree = "<group>"; };
-		CB05C8D51C778AA700B856CE /* BentonSans Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BentonSans Light.otf"; path = "../../../Downloads/BentonSans Light.otf"; sourceTree = "<group>"; };
 		CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeViewController.swift; sourceTree = "<group>"; };
-		CB05C8DD1C83EDB800B856CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Bridge v2/Bridge/Bridge/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		CE46C867CB9346A986A84D39 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EE200CD5BB38C9B511D8C59D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +47,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB05C8D41C776E3500B856CE /* FBSDKShareKit.framework in Frameworks */,
-				69ED53EFCCC81289252FCE9E /* libPods.a in Frameworks */,
 				CB05C8D01C776E1D00B856CE /* FBSDKCoreKit.framework in Frameworks */,
 				CB05C8D21C776E2800B856CE /* FBSDKLoginKit.framework in Frameworks */,
+				DEFB2354BD70D1DB9EE34944 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 				CB05C8D31C776E3500B856CE /* FBSDKShareKit.framework */,
 				CB05C8D11C776E2800B856CE /* FBSDKLoginKit.framework */,
 				CB05C8CF1C776E1D00B856CE /* FBSDKCoreKit.framework */,
-				7E90D2B94C97C57145FDD55B /* libPods.a */,
+				EE200CD5BB38C9B511D8C59D /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,13 +91,13 @@
 				CB05C70C1C75409A00B856CE /* AppDelegate.swift */,
 				CB05C70E1C75409A00B856CE /* ViewController.swift */,
 				CB05C8D71C7A38B200B856CE /* BridgeViewController.swift */,
-				CB05C8DC1C83EDB800B856CE /* Main.storyboard */,
+				C0531F311C9F51FC00513257 /* Main.storyboard */,
 				CB05C7161C75409A00B856CE /* Assets.xcassets */,
 				CB05C7181C75409A00B856CE /* LaunchScreen.storyboard */,
 				CB05C71B1C75409A00B856CE /* Info.plist */,
 				CB05C7131C75409A00B856CE /* Bridge.xcdatamodeld */,
 				CB05C7251C767D7600B856CE /* Bridge-Bridging-Header.h */,
-				CB05C8D51C778AA700B856CE /* BentonSans Light.otf */,
+				C0531F2F1C9F50FF00513257 /* BentonSans-Light.otf */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB05C71A1C75409A00B856CE /* LaunchScreen.storyboard in Resources */,
+				C0531F321C9F51FC00513257 /* Main.storyboard in Resources */,
 				CB05C7171C75409A00B856CE /* Assets.xcassets in Resources */,
-				CB05C8D61C778AA700B856CE /* BentonSans Light.otf in Resources */,
-				CB05C8DE1C83EDB800B856CE /* Main.storyboard in Resources */,
+				C0531F301C9F50FF00513257 /* BentonSans-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +250,6 @@
 				CB05C7191C75409A00B856CE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		CB05C8DC1C83EDB800B856CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB05C8DD1C83EDB800B856CE /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -350,7 +342,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/BHEngelhard/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Bridge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -368,7 +359,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/BHEngelhard/Documents/FacebookSDKs-iOS-20160210";
 				INFOPLIST_FILE = Bridge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
